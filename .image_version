@@ -1,0 +1,4 @@
+# shellcheck disable=SC2034
+VERSION="0.0.2"
+
+VAULT_RADAR="0.29.0"
