@@ -22,7 +22,7 @@
   },
   "source_image": {
     "identity": {
-      "id": "sha256:e9a6ccf55563b54f279fb61cd6d5a588a7b47b82de74699d13cacefd598dc162",
+      "id": "sha256:bd3f3cb8c2e166d73e6285f1818fc7e251b2f8eaeb82bf692b1cafa12175fe2a",
       "tags": [
         "latest"
       ],
@@ -30,15 +30,15 @@
         "vault_radar_container:latest"
       ],
       "digests": [
-        "sha256:e9a6ccf55563b54f279fb61cd6d5a588a7b47b82de74699d13cacefd598dc162"
+        "sha256:bd3f3cb8c2e166d73e6285f1818fc7e251b2f8eaeb82bf692b1cafa12175fe2a"
       ],
       "full_digests": [
-        "vault_radar_container@sha256:e9a6ccf55563b54f279fb61cd6d5a588a7b47b82de74699d13cacefd598dc162"
+        "vault_radar_container@sha256:bd3f3cb8c2e166d73e6285f1818fc7e251b2f8eaeb82bf692b1cafa12175fe2a"
       ]
     },
-    "size": 36658999,
+    "size": 36657046,
     "size_human": "37 MB",
-    "create_time": "2025-07-30T07:45:50Z",
+    "create_time": "2025-07-30T12:54:04Z",
     "runtime_name": "docker",
     "architecture": "arm64",
     "user": "vault",
@@ -58,29 +58,29 @@
       "exe_path": ""
     }
   },
-  "minified_image_size": 29711064,
+  "minified_image_size": 29737460,
   "minified_image_size_human": "30 MB",
   "minified_image": "vault_radar_container.slim",
-  "minified_image_id": "sha256:e4e767164793656738119769e473de9a599243519dbf50fa4b239fabac2bb8d9",
-  "minified_image_digest": "sha256:2614a26336da4d755f0a71d8544309c5cbc307fbb398ee682b8d4b78326060ab",
+  "minified_image_id": "sha256:d98b5df254ba2eb70449955fd3d6b8cc420092d66db591bacaf4c2736df15175",
+  "minified_image_digest": "sha256:939ad03bc9c70ef05d04b5dca31f1f17e4e7d8de91b9f5f8113094e0afae3abe",
   "minified_image_has_data": true,
-  "minified_by": 1.2338500903232548,
-  "artifact_location": "/opt/homebrew/bin/.mint-state/images/e9a6ccf55563b54f279fb61cd6d5a588a7b47b82de74699d13cacefd598dc162/artifacts",
+  "minified_by": 1.232689207484432,
+  "artifact_location": "/opt/homebrew/bin/.mint-state/images/bd3f3cb8c2e166d73e6285f1818fc7e251b2f8eaeb82bf692b1cafa12175fe2a/artifacts",
   "container_report_name": "creport.json",
   "seccomp_profile_name": "vault_radar_container-seccomp.json",
   "apparmor_profile_name": "vault_radar_container-apparmor-profile",
   "image_stack": [
     {
       "is_top_image": true,
-      "id": "sha256:e9a6ccf55563b54f279fb61cd6d5a588a7b47b82de74699d13cacefd598dc162",
+      "id": "sha256:bd3f3cb8c2e166d73e6285f1818fc7e251b2f8eaeb82bf692b1cafa12175fe2a",
       "full_name": "vault_radar_container:latest",
       "repo_name": "vault_radar_container",
       "version_tag": "latest",
       "raw_tags": [
         "vault_radar_container:latest"
       ],
-      "create_time": "2025-07-30T07:45:50Z",
-      "new_size": 102506496,
+      "create_time": "2025-07-30T12:54:04Z",
+      "new_size": 102498304,
       "new_size_human": "102 MB",
       "instructions": [
         {
@@ -119,7 +119,7 @@
         },
         {
           "type": "ARG",
-          "time": "2025-07-30T07:45:49Z",
+          "time": "2025-07-30T12:54:04Z",
           "is_nop": false,
           "local_image_exists": false,
           "layer_index": 0,
@@ -129,13 +129,13 @@
           "command_all": "ARG VAULT_RADAR_VERSION=0.29.0",
           "comment": "buildkit.dockerfile.v0",
           "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
+          "inst_set_time_bucket": "2025-07-30T14:45:00+02:00",
           "inst_set_time_index": 1,
           "inst_set_time_reverse_index": 0
         },
         {
           "type": "ENV",
-          "time": "2025-07-30T07:45:49Z",
+          "time": "2025-07-30T12:54:04Z",
           "is_nop": false,
           "local_image_exists": false,
           "layer_index": 0,
@@ -145,13 +145,13 @@
           "command_all": "ENV USER=vault",
           "comment": "buildkit.dockerfile.v0",
           "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
+          "inst_set_time_bucket": "2025-07-30T14:45:00+02:00",
           "inst_set_time_index": 1,
           "inst_set_time_reverse_index": 0
         },
         {
           "type": "LABEL",
-          "time": "2025-07-30T07:45:49Z",
+          "time": "2025-07-30T12:54:04Z",
           "is_nop": false,
           "local_image_exists": false,
           "layer_index": 0,
@@ -161,51 +161,33 @@
           "command_all": "LABEL org.opencontainers.image.title=vault-radar-cli org.opencontainers.image.description=Containerized CLI for Vault Radar with scan automation support org.opencontainers.image.version=0.29.0 org.opencontainers.image.licenses=MPL-2.0 org.opencontainers.image.source=https://github.com/raymonepping/homebrew-radar-love-cli",
           "comment": "buildkit.dockerfile.v0",
           "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
+          "inst_set_time_bucket": "2025-07-30T14:45:00+02:00",
           "inst_set_time_index": 1,
           "inst_set_time_reverse_index": 0
         },
         {
           "type": "RUN",
-          "time": "2025-07-30T07:45:49Z",
+          "time": "2025-07-30T12:54:04Z",
           "is_nop": false,
           "local_image_exists": false,
           "layer_index": 0,
-          "size": 20168704,
+          "size": 20205568,
           "size_human": "20 MB",
           "command_snippet": "RUN apk add --no-cache bash=5.2.26-r0 jq=1.7...",
-          "command_all": "RUN apk add --no-cache bash=5.2.26-r0 jq=1.7.1-r0 git=2.45.4-r0 ca-certificates=20250619-r0",
+          "command_all": "RUN apk add --no-cache bash=5.2.26-r0 jq=1.7.1-r0 git=2.45.4-r0 ca-certificates=20250619-r0 && adduser -u 1001 -D -s /bin/bash $USER",
           "system_commands": [
-            "apk add --no-cache bash=5.2.26-r0 jq=1.7.1-r0 git=2.45.4-r0 ca-certificates=20250619-r0"
-          ],
-          "comment": "buildkit.dockerfile.v0",
-          "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
-          "inst_set_time_index": 1,
-          "inst_set_time_reverse_index": 0
-        },
-        {
-          "type": "RUN",
-          "time": "2025-07-30T07:45:49Z",
-          "is_nop": false,
-          "local_image_exists": false,
-          "layer_index": 0,
-          "size": 40960,
-          "size_human": "41 kB",
-          "command_snippet": "RUN adduser -u 1001 -D -s /bin/bash $USER",
-          "command_all": "RUN adduser -u 1001 -D -s /bin/bash $USER",
-          "system_commands": [
+            "apk add --no-cache bash=5.2.26-r0 jq=1.7.1-r0 git=2.45.4-r0 ca-certificates=20250619-r0",
             "adduser -u 1001 -D -s /bin/bash $USER"
           ],
           "comment": "buildkit.dockerfile.v0",
           "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
+          "inst_set_time_bucket": "2025-07-30T14:45:00+02:00",
           "inst_set_time_index": 1,
           "inst_set_time_reverse_index": 0
         },
         {
           "type": "COPY",
-          "time": "2025-07-30T07:45:49Z",
+          "time": "2025-07-30T12:54:04Z",
           "is_nop": false,
           "local_image_exists": false,
           "layer_index": 0,
@@ -216,32 +198,13 @@
           "command_all": "COPY /build/vault-radar /usr/local/bin/vault-radar",
           "comment": "buildkit.dockerfile.v0",
           "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
-          "inst_set_time_index": 1,
-          "inst_set_time_reverse_index": 0
-        },
-        {
-          "type": "RUN",
-          "time": "2025-07-30T07:45:50Z",
-          "is_nop": false,
-          "local_image_exists": false,
-          "layer_index": 0,
-          "size": 4096,
-          "size_human": "4.1 kB",
-          "command_snippet": "RUN chmod +x /usr/local/bin/vault-radar",
-          "command_all": "RUN chmod +x /usr/local/bin/vault-radar",
-          "system_commands": [
-            "chmod +x /usr/local/bin/vault-radar"
-          ],
-          "comment": "buildkit.dockerfile.v0",
-          "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
+          "inst_set_time_bucket": "2025-07-30T14:45:00+02:00",
           "inst_set_time_index": 1,
           "inst_set_time_reverse_index": 0
         },
         {
           "type": "USER",
-          "time": "2025-07-30T07:45:50Z",
+          "time": "2025-07-30T12:54:04Z",
           "is_nop": false,
           "local_image_exists": false,
           "layer_index": 0,
@@ -251,13 +214,13 @@
           "command_all": "USER vault",
           "comment": "buildkit.dockerfile.v0",
           "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
+          "inst_set_time_bucket": "2025-07-30T14:45:00+02:00",
           "inst_set_time_index": 1,
           "inst_set_time_reverse_index": 0
         },
         {
           "type": "HEALTHCHECK",
-          "time": "2025-07-30T07:45:50Z",
+          "time": "2025-07-30T12:54:04Z",
           "is_nop": false,
           "local_image_exists": false,
           "layer_index": 0,
@@ -267,13 +230,13 @@
           "command_all": "HEALTHCHECK --interval=30s --timeout=5s --start-period=5s CMD vault-radar version || exit 1",
           "comment": "buildkit.dockerfile.v0",
           "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
+          "inst_set_time_bucket": "2025-07-30T14:45:00+02:00",
           "inst_set_time_index": 1,
           "inst_set_time_reverse_index": 0
         },
         {
           "type": "ENTRYPOINT",
-          "time": "2025-07-30T07:45:50Z",
+          "time": "2025-07-30T12:54:04Z",
           "is_last_instruction": true,
           "is_nop": false,
           "is_exec_form": true,
@@ -288,7 +251,7 @@
             "vault_radar_container:latest"
           ],
           "is_buildkit_instruction": true,
-          "inst_set_time_bucket": "2025-07-30T09:45:00+02:00",
+          "inst_set_time_bucket": "2025-07-30T14:45:00+02:00",
           "inst_set_time_index": 1,
           "inst_set_time_reverse_index": 0
         }

@@ -13,11 +13,12 @@ RUN apk add --no-cache \
 WORKDIR /build
 
 # Download and extract only the vault-radar binary
+# Download and extract only the vault-radar binary
 RUN curl -sSL https://releases.hashicorp.com/vault-radar/${VAULT_RADAR_VERSION}/vault-radar_${VAULT_RADAR_VERSION}_linux_amd64.zip \
   -o vault-radar.zip \
-  && unzip vault-radar.zip \
-  && chmod +x vault-radar \
-  && rm -f ./*.zip ./*.txt
+ && unzip vault-radar.zip \
+ && chmod +x vault-radar \
+ && { rm -f ./*.zip ./*.txt || true; }
 
 # -------------------------------
 # 🚀 Stage 2: Runtime
@@ -27,24 +28,21 @@ FROM alpine:3.20
 ARG VAULT_RADAR_VERSION=0.29.0
 ENV USER=vault
 
-# Labels with dynamic version
 LABEL org.opencontainers.image.title="vault-radar-cli" \
       org.opencontainers.image.description="Containerized CLI for Vault Radar with scan automation support" \
       org.opencontainers.image.version="${VAULT_RADAR_VERSION}" \
       org.opencontainers.image.licenses="MPL-2.0" \
       org.opencontainers.image.source="https://github.com/raymonepping/homebrew-radar-love-cli"
 
-# Runtime dependencies
-# TODO: CVE-2025-46394, CVE-2024-58251 - all low severity in busybox; will monitor for upstream Alpine fix
+# Consolidated into one RUN (fixes DL3059)
 RUN apk add --no-cache \
     bash=5.2.26-r0 \
     jq=1.7.1-r0 \
     git=2.45.4-r0 \
     ca-certificates=20250619-r0 \
-  && adduser -u 1001 -D -s /bin/bash $USER \
-  && chmod +x /usr/local/bin/vault-radar
+ && adduser -u 1001 -D -s /bin/bash $USER
 
-# Install binary
+# Install binary (already chmodded in builder)
 COPY --from=builder /build/vault-radar /usr/local/bin/vault-radar
 
 # Switch to non-root user
