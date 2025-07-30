@@ -14,7 +14,12 @@ v*.tar.gz
 !*.image_version
 slim_container.sh
 build_radar_container.sh
-
+.dockerignore
+.gitignore
+.image_version
+.version
+slim.report.json
+sanity_check.md
 
 ########################################
 # 💻 IDE & Editor Configs
