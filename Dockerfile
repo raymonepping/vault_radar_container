@@ -15,9 +15,9 @@ WORKDIR /build
 # Download and extract only the vault-radar binary
 RUN curl -sSL https://releases.hashicorp.com/vault-radar/${VAULT_RADAR_VERSION}/vault-radar_${VAULT_RADAR_VERSION}_linux_amd64.zip \
   -o vault-radar.zip \
- && unzip vault-radar.zip \
- && chmod +x vault-radar \
- && rm -f *.zip *.txt || true
+  && unzip vault-radar.zip \
+  && chmod +x vault-radar \
+  && rm -f ./*.zip ./*.txt
 
 # -------------------------------
 # 🚀 Stage 2: Runtime
@@ -35,18 +35,17 @@ LABEL org.opencontainers.image.title="vault-radar-cli" \
       org.opencontainers.image.source="https://github.com/raymonepping/homebrew-radar-love-cli"
 
 # Runtime dependencies
+# TODO: CVE-2025-46394, CVE-2024-58251 - all low severity in busybox; will monitor for upstream Alpine fix
 RUN apk add --no-cache \
     bash=5.2.26-r0 \
     jq=1.7.1-r0 \
     git=2.45.4-r0 \
-    ca-certificates=20250619-r0
-
-# Create non-root user with fixed UID
-RUN adduser -u 1001 -D -s /bin/bash $USER
+    ca-certificates=20250619-r0 \
+  && adduser -u 1001 -D -s /bin/bash $USER \
+  && chmod +x /usr/local/bin/vault-radar
 
 # Install binary
 COPY --from=builder /build/vault-radar /usr/local/bin/vault-radar
-RUN chmod +x /usr/local/bin/vault-radar
 
 # Switch to non-root user
 USER $USER
