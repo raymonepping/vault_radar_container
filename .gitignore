@@ -12,6 +12,8 @@ Thumbs.db
 CHANGELOG_*.md
 v*.tar.gz
 !*.image_version
+slim_container.sh
+build_radar_container.sh
 
 
 ########################################
