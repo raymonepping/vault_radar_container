@@ -20,6 +20,7 @@ build_radar_container.sh
 .version
 slim.report.json
 sanity_check.md
+FOLDER_TREE.md
 
 ########################################
 # 💻 IDE & Editor Configs
