@@ -1,0 +1,23 @@
+services:
+  vault-radar:
+    image: repping/vault-radar-cli:0.30.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    command: ["agent", "exec"]
+    volumes:
+      - ./logs:/var/log/vault-radar
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"   # rotate when a file hits 10 MB
+        max-file: "5"     # keep 5 files, ~50 MB total per container
+    healthcheck:
+      test: ["CMD", "vault-radar", "version"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
